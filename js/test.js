@@ -15,4 +15,15 @@ console.log('')
 */
 
 var IsMarkHasHigherBMI= BMI_Mark > BMI_John;
+/*
 console.log('Mark has higher BMI than john- the statement is '+ IsMarkHasHigherBMI);
+*/
+
+if(IsMarkHasHigherBMI)
+{
+    console.log("Mark has higher BMI than john");
+}
+else
+{
+    console.log("John has higher BMI than Mark");
+}
