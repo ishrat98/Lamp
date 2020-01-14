@@ -102,16 +102,6 @@ switch (true) {
 */
 
 /*
-John and Mike both play basketball in different teams. In the latest 3 games, John's team scored 89, 120 and 103 points, 
-while Mike's team scored 116, 94 and 123 points.
-
-1. Calculate the average score for each team
-2. Decide which teams wins in average (highest average score), and print the winner to the console. Also include the average score in the output.
-3. Then change the scores to show different winners. Don't forget to take into account there might be a draw (the same average score)
-
-4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
-5. Like before, change the scores to generate different winners, keeping in mind there might be draws.
-*/
 
 var scoreJohn = (189 + 120 + 103) / 3.0;
 var scoreMike = (129 + 94 + 123) / 3.0;
@@ -128,4 +118,142 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 } else {
     console.log('There is a draw');
 }
+*/
+/*
+function calculateAge(birthYear) {
+    return 2018 - birthYear;
+}
 
+var ageJohn = calculateAge(1998);
+var ageMike = calculateAge(1999);
+var ageJane = calculateAge(2005);
+console.log(ageJohn, ageMike, ageJane);
+
+
+function yearsUntilRetirement(year, firstName) {
+    var age = calculateAge(year);
+    var retirement = 65 - age;
+    
+    if (retirement > 0) {
+        console.log(firstName + ' retires in ' + retirement + ' years.');
+    } else {
+        console.log(firstName + ' is already retired.')
+    }
+    
+}
+
+yearsUntilRetirement(1990, 'John');
+yearsUntilRetirement(1948, 'Mike');
+yearsUntilRetirement(1969, 'Jane');
+*/
+
+
+/*****************************
+* CODING CHALLENGE 3
+*/
+
+/*
+John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+
+To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of the bill when the
+ bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+
+In the end, John would like to have 2 arrays:
+1) Containing all three tips (one for each bill)
+2) Containing all three final paid amounts (bill + tip).
+
+(NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+
+GOOD LUCK 😀
+*/
+/*
+function tipCalculator(bill)
+{
+    var percentage;
+    if(bill<50)
+        percentage =.2;
+    else if(bill>=50 && bill<=200)
+        percentage =.15;
+
+    else   
+        percentage =.1;
+
+    return bill*percentage;
+}
+
+var bills= [124,48,268];
+var tips= [tipCalculator(bills[0]),
+tipCalculator(bills[1]),
+tipCalculator(bills[2])];
+
+var finalBills =[bills[0]+tips[0],bills[1]+tips[1],bills[2]+tips[2]];
+
+console.log(tips, finalBills);
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1998,
+    family: ['Jane,Bob'],
+    job: "Instructor",
+    isMarried: false,
+    calcAge: function (birthYear)
+    {
+        return 2020 - birthYear;
+    }
+
+};
+console.log(john);
+console.log(john.calcAge(1990))
+
+var Jane= new Object();
+Jane.firstName= 'Jane';
+Jane.birthYear= 2000;
+Jane['isMarried']= true;
+console.log(Jane);
+*/
+/*****************************
+* CODING CHALLENGE 4
+*/
+
+/*
+Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality
+ with objects and methods.
+1. For each of them, create an object with properties for their full name, mass, and height
+2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
+3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don't forget they might have the same BMI.
+
+Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+
+GOOD LUCK 😀
+*/
+var Mark = {
+    name: 'Mark',
+    mass: 100,
+    height: 1.67,
+    BMI: function(mass,height) {
+        this.BMI= this.mass / (this.height * this.height);
+        return this.BMI;
+        //return (mass/(height*height));
+    }
+};
+
+
+var John = {
+    name: 'John',
+    mass: 90,
+    height: 1.77,
+    BMI: function(mass,height) {
+        this.BMI= this.mass / (this.height * this.height);
+        return this.BMI;
+        //return (mass/(height*height));
+    }
+};
+
+if(Mark.BMI() > John.BMI())
+    console.log('Mark has greater BMI than John');
+else if (Mark.BMI() < John.BMI())
+    console.log('John has greater BMI');
+
+else
+    console.log('They has equal BMI');
